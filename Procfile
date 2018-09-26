@@ -1,1 +1,1 @@
-web: python ./verkefni4.py $PORT
+web: python ./heroku.py $PORT
