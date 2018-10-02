@@ -4,8 +4,8 @@
 
 
 
-#from sys import argv
-import bottle
+from sys import argv
+#import bottle
 from bottle import*
 import urllib.request, json
 
@@ -52,5 +52,7 @@ def villa(error):
 
 
 #run(host='localhost', port=8080, reloader=True, debug=True)
-run(host="localhost", port=8000, debug=True)
+#run(host="localhost", port=8000, debug=True)
 
+
+bootle.run(host='0.0.0.0', port=argv[1])
