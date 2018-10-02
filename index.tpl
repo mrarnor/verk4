@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>verkefni 3 - B</title>
-	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+	<title>verkefni 4</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
 	<header></header>
 	%include ('header.tpl')
 
+	<body>
+    <%
+     import json
+     with open("gengi.json", "r", encoding="utf-8") as skra:
+        gengi = json.load(skra)
+     end
+    %>
+
 	<div class="row">
+
 		<section>
-		<h3>{{frettur{0}{0}}}</h3>
-		</section>
-		<section><h2>nyheter</h2></section>
-		<section>mynd</section>
-		<section>
-		<ul>
-		%cnt = 0;
-		% for i in frettir:
-	    	<li>
-		        <a href="/frettir/{{cnt}}"> {{i{0}}}</a>
-		    </li>
-    		%cnt +=1
-		%end
-		</ul>
+		    <h4>Gengi Json</h4>
+			<ul>
+				% for i in gengi['results']:
+					<li>{{i ['longName'] }} - {{i ['shortName'] }} ISKR: {{i ['value'] }}</li>
+				% end
+			</ul>
 		</section>
 	</div>
-
 	%include('footer.tpl')
 </body>
 </html>
+
+
+

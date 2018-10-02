@@ -1,3 +1,3 @@
 <header class="header">
-	<h1>Hassar</h1>
+	<h1>Galdmeiri</h1>
 </header>

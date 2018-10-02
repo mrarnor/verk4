@@ -2,24 +2,23 @@
 <head>
 	<meta charset="utf-8">
 	<title>Json</title>
-	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-	%include("header.tpl")
+	%include('header.tpl')
 
 	<div class="row">
 
 		<section>
-			<h2>Gengi gjaldmiðla frá apis</h2>
+		    <h4>Gengi API</h4>
 			<ul>
-				%for i in data['results']:
-					<li>
-						{{i['shortName']}}  {{i['longName']}} - ISKR: ['value']}}
-					</li>
-				%end
+				% for i in data['results']:
+					<li>{{i ['longName'] }} - {{i ['shortName'] }} ISKR: ({{i ['value'] }})</li>
+				% end
 			</ul>
 		</section>
 	</div>
-	%include("footer.tpl")
+	%include('footer.tpl')
 </body>
 </html>
+
